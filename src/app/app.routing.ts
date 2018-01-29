@@ -4,6 +4,7 @@ import {LoginComponent} from "./component/login/login.component";
 import {AddNewBookComponent} from "./component/add-new-book/add-new-book.component";
 import {BookListComponent} from "./component/book-list/book-list.component";
 import {ViewBookComponent} from "./component/view-book/view-book.component";
+import {EditBookComponent} from "./component/edit-book/edit-book.component";
 
 const appRoutes: Routes = [{
   path: '',
@@ -21,6 +22,9 @@ const appRoutes: Routes = [{
 }, {
   path: 'viewBook/:id',
   component: ViewBookComponent
+}, {
+  path: 'editBook/:id',
+  component: EditBookComponent
 }];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

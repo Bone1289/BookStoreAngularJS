@@ -20,8 +20,8 @@ export class ViewBookComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
-      this.bookId = Number.parseInt(params['id']);
-    })
+     this.bookId = Number.parseInt(params['id']);
+    });
 
     this.getBookService.getBook(this.bookId).subscribe(
       res => {
@@ -31,6 +31,10 @@ export class ViewBookComponent implements OnInit {
         console.log(error)
       }
     )
+  }
+
+  onSelect(book: Book) {
+    this.router.navigate(['/editBook', book.id]);
   }
 
 }

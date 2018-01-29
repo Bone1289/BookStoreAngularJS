@@ -20,7 +20,7 @@ export class AddNewBookComponent implements OnInit {
   onSubmit() {
     this.addBookService.sendBook(this.newBook).subscribe(
       res => {
-        this.uploadImageService.upload(JSON.parse(JSON.parse(JSON.stringify(res))._body).id)
+        this.uploadImageService.upload(JSON.parse(JSON.parse(JSON.stringify(res))._body).id);
         this.bookAdded = true;
         this.newBook = new Book();
         this.newBook.active = true;

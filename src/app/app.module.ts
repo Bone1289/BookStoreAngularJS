@@ -22,14 +22,23 @@ import {AddBookService} from "./service/add-book.service";
 import {UploadImageService} from "./service/upload-image.service";
 import {GetBookListService} from "./service/get-book-list.service";
 import {GetBookServiceService} from "./service/get-book-service.service";
-
+import {EditBookServiceService} from "./service/edit-book-service.service";
 
 import {AppComponent} from './app.component';
 import {NavBarComponent} from './component/nav-bar/nav-bar.component';
 import {LoginComponent} from './component/login/login.component';
 import {AddNewBookComponent} from './component/add-new-book/add-new-book.component';
-import { BookListComponent } from './component/book-list/book-list.component';
-import { ViewBookComponent } from './component/view-book/view-book.component';
+import {BookListComponent} from './component/book-list/book-list.component';
+import {ViewBookComponent} from './component/view-book/view-book.component';
+import {EditBookComponent} from './component/edit-book/edit-book.component';
+
+
+import {HttpClientModule} from '@angular/common/http';
+import {DetailsUploadComponent} from "./component/upload/details-upload/details-upload.component";
+import {FormUploadComponent} from './component/upload/form-upload/form-upload.component';
+import {ListUploadComponent} from './component/upload/list-upload/list-upload.component';
+import {UploadFileService} from './component/upload/upload-file.service';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +48,10 @@ import { ViewBookComponent } from './component/view-book/view-book.component';
     AddNewBookComponent,
     BookListComponent,
     ViewBookComponent,
+    EditBookComponent,
+    DetailsUploadComponent,
+    FormUploadComponent,
+    ListUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -55,14 +68,17 @@ import { ViewBookComponent } from './component/view-book/view-book.component';
     MatListModule,
     routing,
     HttpModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     LoginService,
     AddBookService,
     UploadImageService,
     GetBookListService,
-    GetBookServiceService
+    GetBookServiceService,
+    EditBookServiceService,
+    UploadFileService
   ],
   bootstrap: [AppComponent]
 })
