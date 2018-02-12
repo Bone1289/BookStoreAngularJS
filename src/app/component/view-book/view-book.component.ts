@@ -20,12 +20,12 @@ export class ViewBookComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
-     this.bookId = Number.parseInt(params['id']);
+      this.bookId = Number.parseInt(params['id']);
+      this.book.id = Number.parseInt(params['id']);
     });
-
     this.getBookService.getBook(this.bookId).subscribe(
       res => {
-        this.book = res.json();
+        this.book = res;
       },
       error => {
         console.log(error)

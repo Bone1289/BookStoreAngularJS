@@ -63,7 +63,7 @@ export class EditBookComponent implements OnInit {
     })
 
     this.getBookService.getBook(this.bookId).subscribe(res => {
-        this.book = res.json();
+        this.book = res;
       },
       error => {
       })
